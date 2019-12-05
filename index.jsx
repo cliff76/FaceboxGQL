@@ -14,14 +14,30 @@ function imageUrl(withId, withGender) {
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+class Avatar extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = props;
+  }
+
+  render() {
+    return (
+      <div className="profile-picture big-profile-picture clear">
+        <img width="150px" alt="Jessica Hartman picture"
+             src={imageUrl(this.state.id, this.state.gender)} />
+      </div>
+    );
+  }
+}
+
 function Buddy(props) {
   return (
     <div className="profile block">
       <a className="add-button" href="#28"><span className="icon entypo-plus scnd-font-color"></span></a>
-      <div className="profile-picture big-profile-picture clear">
-        <img width="150px" alt="Jessica Hartman picture"
-             src={imageUrl(props.id, props.gender)} />
-      </div>
+
+      <Avatar id={props.id} gender={props.gender}/>
+
       <h1 className="user-name"><a href={props.website}>{props.first_name} {props.last_name}</a></h1>
       <div className="profile-description">
         <p>Age: {props.age}</p>
