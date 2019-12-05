@@ -1,0 +1,10 @@
+{
+  "name": "react-tutorial",
+  "version": "1.0.0",
+  "description": "A basic tutorial for React JS",
+  "main": "index.js",
+  "repository": "git@git.samsungmtv.com:c.craig/react-tutorial.git",
+  "author": "Clifton Craig <c.craig@samsung.com>",
+  "license": "MIT",
+  "private": false
+}
