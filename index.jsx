@@ -15,20 +15,13 @@ function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-class Avatar extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = props;
-  }
-
-  render() {
-    return (
-      <div className="profile-picture big-profile-picture clear">
-        <img width="150px" alt="Jessica Hartman picture"
-             src={imageUrl(this.state.id, this.state.gender)} />
-      </div>
-    );
-  }
+function Avatar(props) {
+  return (
+    <div className="profile-picture big-profile-picture clear">
+      <img width="150px" alt="Jessica Hartman picture"
+           src={imageUrl(props.id, props.gender)} />
+    </div>
+  );
 }
 
 function Buddy(props) {
