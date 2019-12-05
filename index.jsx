@@ -74,7 +74,11 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = {};
+  }
+
+  fetchBuddies() {
+    return {
       buddies: [
         { id: randomNumber(1,99), gender: 'female', first_name: 'Lisa', last_name: 'Yi', quote: faker.lorem.sentence(), age: randomNumber(25, 55), website: faker.internet.url() },
         { id: randomNumber(1,99), gender: 'female', first_name: 'Mary', last_name: 'Gunderson', quote: faker.lorem.sentence(), age: randomNumber(25, 55), website: faker.internet.url() },
@@ -82,6 +86,10 @@ class App extends React.Component {
         { id: randomNumber(1,99), gender: 'male', first_name: 'George', last_name: 'Fouché', quote: faker.lorem.sentence(), age: randomNumber(25, 55), website: faker.internet.url() }
       ]
     };
+  }
+
+  componentDidMount() {
+    this.setState(previousState => Object.assign({}, previousState, this.fetchBuddies()) );
   }
 
   render() {
