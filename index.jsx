@@ -24,12 +24,27 @@ function Avatar(props) {
   );
 }
 
+function BuddyDetails(props) {
+  return (
+    <React.Fragment>
+      <h1 className="user-name"><a href={props.website}>{props.first_name} {props.last_name}</a></h1>
+      <div className="profile-description">
+        <p>Age: {props.age}</p>
+        <p className="scnd-font-color">{props.quote}
+        </p>
+      </div>
+    </React.Fragment>
+  );
+}
+
 function Buddy(props) {
   return (
     <div className="profile block">
       <a className="add-button" href="#28"><span className="icon entypo-plus scnd-font-color"></span></a>
 
       <Avatar id={props.id} gender={props.gender}/>
+
+      <BuddyDetails {...props}/>
 
       <h1 className="user-name"><a href={props.website}>{props.first_name} {props.last_name}</a></h1>
       <div className="profile-description">
